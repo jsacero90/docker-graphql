@@ -32,7 +32,6 @@ jobs:
     - name: Push Docker image
       run: | 
         docker push stiddark/docker-graphql:0.0.2
-        docker push tag stiddark/docker-graphql:0.0.2 stiddark/docker-graphql
         
         
         
