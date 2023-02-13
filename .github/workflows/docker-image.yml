@@ -28,10 +28,12 @@ jobs:
     - name: Build Docker image
       run: | 
         docker build -t stiddark/docker-graphql:0.0.2 .
+        docker build -t stiddark/docker-graphql .
         
     - name: Push Docker image
       run: | 
         docker push stiddark/docker-graphql:0.0.2
+        docker push stiddark/docker-graphql
         
         
         
