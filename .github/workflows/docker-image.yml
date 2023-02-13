@@ -23,12 +23,15 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
-        echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-        echo "Iniciando login"
+
+    - name: Build Docker image
+      run: | 
+        docker build -t stiddark/docker-graphql:0.0.2 .
         
-        
-        
+    - name: Push Docker image
+      run: | 
+        docker push stiddark/docker-graphql:0.0.2 .
         
         
         
